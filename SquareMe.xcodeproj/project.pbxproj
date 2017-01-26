@@ -17,11 +17,11 @@
 		B64C25431E353AAA00B9EF84 /* LocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64C25421E353AAA00B9EF84 /* LocationSearchTableViewController.swift */; };
 		B64C25451E35454500B9EF84 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64C25441E35454500B9EF84 /* GCD.swift */; };
 		B6B0E41D1E37D42B0009D884 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B0E41C1E37D42B0009D884 /* InformationViewController.swift */; };
-		B6B0E4211E3804190009D884 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B0E4201E3804190009D884 /* Pin.swift */; };
 		B6B0E4231E391E6B0009D884 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B0E4221E391E6B0009D884 /* APIClient.swift */; };
 		B6B0E4251E3921740009D884 /* ForsquareClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B0E4241E3921740009D884 /* ForsquareClient.swift */; };
 		B6B0E4271E39249F0009D884 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B0E4261E39249F0009D884 /* Venue.swift */; };
-		B6B0E4291E395C9D0009D884 /* Tips.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B0E4281E395C9D0009D884 /* Tips.swift */; };
+		B6B0E42B1E3A6A220009D884 /* FlickrClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B0E42A1E3A6A220009D884 /* FlickrClient.swift */; };
+		B6B0E42D1E3A74920009D884 /* VenueImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B0E42C1E3A74920009D884 /* VenueImages.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,11 +58,11 @@
 		B64C25421E353AAA00B9EF84 /* LocationSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTableViewController.swift; sourceTree = "<group>"; };
 		B64C25441E35454500B9EF84 /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
 		B6B0E41C1E37D42B0009D884 /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
-		B6B0E4201E3804190009D884 /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		B6B0E4221E391E6B0009D884 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		B6B0E4241E3921740009D884 /* ForsquareClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForsquareClient.swift; sourceTree = "<group>"; };
 		B6B0E4261E39249F0009D884 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
-		B6B0E4281E395C9D0009D884 /* Tips.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tips.swift; sourceTree = "<group>"; };
+		B6B0E42A1E3A6A220009D884 /* FlickrClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrClient.swift; sourceTree = "<group>"; };
+		B6B0E42C1E3A74920009D884 /* VenueImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueImages.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,19 +114,9 @@
 			isa = PBXGroup;
 			children = (
 				B64C25141E35335E00B9EF84 /* AppDelegate.swift */,
-				B64C25161E35335E00B9EF84 /* ViewController.swift */,
-				B64C25421E353AAA00B9EF84 /* LocationSearchTableViewController.swift */,
-				B6B0E41C1E37D42B0009D884 /* InformationViewController.swift */,
-				B64C25441E35454500B9EF84 /* GCD.swift */,
-				B6B0E4201E3804190009D884 /* Pin.swift */,
-				B64C25181E35335E00B9EF84 /* Main.storyboard */,
-				B64C251B1E35335E00B9EF84 /* Assets.xcassets */,
-				B64C251D1E35335E00B9EF84 /* LaunchScreen.storyboard */,
-				B64C25201E35335E00B9EF84 /* Info.plist */,
-				B6B0E4221E391E6B0009D884 /* APIClient.swift */,
-				B6B0E4241E3921740009D884 /* ForsquareClient.swift */,
-				B6B0E4261E39249F0009D884 /* Venue.swift */,
-				B6B0E4281E395C9D0009D884 /* Tips.swift */,
+				B6B0E4311E3A879B0009D884 /* ViewController */,
+				B6B0E42E1E3A87310009D884 /* Model */,
+				B6B0E4321E3A87AF0009D884 /* SupportingFiles */,
 			);
 			path = SquareMe;
 			sourceTree = "<group>";
@@ -147,6 +137,56 @@
 				B64C25361E35335E00B9EF84 /* Info.plist */,
 			);
 			path = SquareMeUITests;
+			sourceTree = "<group>";
+		};
+		B6B0E42E1E3A87310009D884 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B6B0E4221E391E6B0009D884 /* APIClient.swift */,
+				B6B0E4261E39249F0009D884 /* Venue.swift */,
+				B6B0E42C1E3A74920009D884 /* VenueImages.swift */,
+				B6B0E42F1E3A87820009D884 /* Foursquare */,
+				B6B0E4301E3A878D0009D884 /* Flickr */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B6B0E42F1E3A87820009D884 /* Foursquare */ = {
+			isa = PBXGroup;
+			children = (
+				B6B0E4241E3921740009D884 /* ForsquareClient.swift */,
+			);
+			name = Foursquare;
+			sourceTree = "<group>";
+		};
+		B6B0E4301E3A878D0009D884 /* Flickr */ = {
+			isa = PBXGroup;
+			children = (
+				B6B0E42A1E3A6A220009D884 /* FlickrClient.swift */,
+			);
+			name = Flickr;
+			sourceTree = "<group>";
+		};
+		B6B0E4311E3A879B0009D884 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B64C25161E35335E00B9EF84 /* ViewController.swift */,
+				B64C25421E353AAA00B9EF84 /* LocationSearchTableViewController.swift */,
+				B6B0E41C1E37D42B0009D884 /* InformationViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		B6B0E4321E3A87AF0009D884 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B64C25441E35454500B9EF84 /* GCD.swift */,
+				B64C251D1E35335E00B9EF84 /* LaunchScreen.storyboard */,
+				B64C251B1E35335E00B9EF84 /* Assets.xcassets */,
+				B64C25181E35335E00B9EF84 /* Main.storyboard */,
+				B64C25201E35335E00B9EF84 /* Info.plist */,
+			);
+			name = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,12 +327,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B64C25171E35335E00B9EF84 /* ViewController.swift in Sources */,
-				B6B0E4291E395C9D0009D884 /* Tips.swift in Sources */,
+				B6B0E42B1E3A6A220009D884 /* FlickrClient.swift in Sources */,
 				B6B0E4231E391E6B0009D884 /* APIClient.swift in Sources */,
 				B64C25431E353AAA00B9EF84 /* LocationSearchTableViewController.swift in Sources */,
+				B6B0E42D1E3A74920009D884 /* VenueImages.swift in Sources */,
 				B64C25451E35454500B9EF84 /* GCD.swift in Sources */,
 				B6B0E4271E39249F0009D884 /* Venue.swift in Sources */,
-				B6B0E4211E3804190009D884 /* Pin.swift in Sources */,
 				B64C25151E35335E00B9EF84 /* AppDelegate.swift in Sources */,
 				B6B0E41D1E37D42B0009D884 /* InformationViewController.swift in Sources */,
 				B6B0E4251E3921740009D884 /* ForsquareClient.swift in Sources */,

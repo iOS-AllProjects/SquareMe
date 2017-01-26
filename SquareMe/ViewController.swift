@@ -9,11 +9,6 @@
 import UIKit
 import MapKit
 
-//Key:
-//c584f9911f13b519f14b9ca9f4e1e7da
-//Secret:
-//4713769335b62184
-
 protocol HandleMapSearch: class {
     func dropPinZoomIn(placemark:MKPlacemark)
 }
@@ -26,7 +21,6 @@ class ViewController: UIViewController {
     var coordinate = [Coordinate]()
     let foursquareClient = FoursquareClient(clientID: "IWZCIHF04SIEMQITSJLK0NNALQS5CJAN03BKUCS455UT5PZ4", clientSecret: "NACAQQUHN4DQXEJO2ZFD5YRUZNOBEYBCOSYKC5FLORZQILYH")
       var venues = [Venue]()
-      var tips = [Tips]()
     //Mark: Outlets
     @IBOutlet weak var mapView: MKMapView!
 
@@ -88,6 +82,7 @@ class ViewController: UIViewController {
         if segue.identifier == "informationSegue"{
             let infoVC = segue.destination as! InformationViewController
             infoVC.venue = venues[0]
+            infoVC.coordinate = coordinate[0]
             }
     }
 }
@@ -135,18 +130,23 @@ extension ViewController: HandleMapSearch {
         self.coordinate.removeAll()
         self.coordinate = [Coordinate(latitude: placemark.coordinate.latitude, longitude: placemark.coordinate.longitude)]
         ////////
-        self.foursquareClient.fetchVenue(coordinate[0], query: placemark.name!, completion: { result in
+        getVenues(coordinate: coordinate[0], query: placemark.name!)
+    }
+    
+    func getVenues(coordinate: Coordinate, query: String){
+        self.foursquareClient.fetchVenue(coordinate, query: query, completion: { result in
             switch result {
             case .success(let venues):
                 self.venues = venues
+                if !venues.isEmpty{
                 self.getTips(id: venues[0].id)
                 self.getSimilarVenues(id: venues[0].id)
+                }
             case .failure(let error):
                 print(error)
             }
         })
     }
-    
     func getTips(id: String){
         let url = URL(string: "https://api.foursquare.com/v2/venues/\(id)/tips?client_id=IWZCIHF04SIEMQITSJLK0NNALQS5CJAN03BKUCS455UT5PZ4&client_secret=NACAQQUHN4DQXEJO2ZFD5YRUZNOBEYBCOSYKC5FLORZQILYH&v=20170118&m=foursquare")
         
@@ -226,7 +226,7 @@ extension ViewController : MKMapViewDelegate {
             annotationView!.annotation = annotation
         }
         
-        let pinImage = UIImage(named: "Info_Icon")
+        let pinImage = UIImage(named: "Placeholder_Icon")
         annotationView!.image = pinImage
         return annotationView
             }

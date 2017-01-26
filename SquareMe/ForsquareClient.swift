@@ -118,7 +118,7 @@ final class FoursquareClient: APIClient {
     
     convenience init(clientID: String, clientSecret: String) {
         self.init(configuration: .default, clientID: clientID, clientSecret: clientSecret)
-}
+    }
     
     func fetchVenue(_ location: Coordinate, query: String?, searchRadius: Int? = nil, limit: Int? = nil, completion: @escaping (APIResult<[Venue]>) -> Void) {
         

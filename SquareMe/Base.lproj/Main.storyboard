@@ -67,29 +67,55 @@
                                             <constraint firstAttribute="height" constant="202" id="wnU-Ed-EAG"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AMf-2d-Paj">
-                                        <rect key="frame" x="17.5" y="212" width="340" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AMf-2d-Paj">
+                                        <rect key="frame" x="12.5" y="212" width="350" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBs-En-Tmf">
-                                                <rect key="frame" x="0.0" y="0.0" width="160" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
                                                 <color key="backgroundColor" red="0.95294117649999999" green="0.61176470589999998" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="Grab By Name">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="grabByNameButtonTapped:" destination="dR1-fu-V0Y" eventType="touchUpInside" id="uQr-vO-bDh"/>
+                                                </connections>
                                             </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photos_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="bDL-IS-frT">
+                                                <rect key="frame" x="160" y="0.0" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="C5Y-fW-fS3"/>
+                                                    <constraint firstAttribute="width" constant="30" id="rU2-LB-c2T"/>
+                                                </constraints>
+                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RrB-QZ-pga">
-                                                <rect key="frame" x="180" y="0.0" width="160" height="30"/>
+                                                <rect key="frame" x="200" y="0.0" width="150" height="30"/>
                                                 <color key="backgroundColor" red="0.95294117649999999" green="0.61176470589999998" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="160" id="XLf-ey-GMy"/>
+                                                    <constraint firstAttribute="width" constant="150" id="GLj-4h-BGk"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="Grab By Coordinate">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="grabByCoordinateButtonTapped:" destination="dR1-fu-V0Y" eventType="touchUpInside" id="AoU-cZ-DWe"/>
+                                                </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="GBs-En-Tmf" firstAttribute="width" secondItem="RrB-QZ-pga" secondAttribute="width" id="pgw-8h-88N"/>
+                                        </constraints>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tsL-0F-T6X">
                                         <rect key="frame" x="1.5" y="252" width="372.5" height="101.5"/>
@@ -99,16 +125,21 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibf-br-ll5">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibf-br-ll5">
                                         <rect key="frame" x="107.5" y="363.5" width="160" height="30"/>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.61176470589999998" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="160" id="eMJ-AU-rjO"/>
+                                            <constraint firstAttribute="height" constant="30" id="fcS-QI-wIy"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Another Tip">
+                                        <state key="normal" title="Another Tip" image="Info_Icon">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="anotherTipButtonTapped:" destination="dR1-fu-V0Y" eventType="touchUpInside" id="Ivf-22-iul"/>
                                         </connections>
@@ -120,7 +151,7 @@
                                             <constraint firstAttribute="width" constant="343" id="0KM-0P-Tpd"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="similarCell" textLabel="L3m-5j-X5d" style="IBUITableViewCellStyleDefault" id="L7M-oP-e4x">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="similarCell" textLabel="L3m-5j-X5d" imageView="EK2-b2-4TG" style="IBUITableViewCellStyleDefault" id="L7M-oP-e4x">
                                                 <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L7M-oP-e4x" id="btm-q9-NyX">
@@ -128,12 +159,16 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="L3m-5j-X5d">
-                                                            <rect key="frame" x="15" y="0.0" width="313" height="43"/>
+                                                            <rect key="frame" x="62" y="0.0" width="266" height="43"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Radar_Icon" id="EK2-b2-4TG">
+                                                            <rect key="frame" x="15" y="5" width="32" height="32"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </imageView>
                                                     </subviews>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -169,6 +204,7 @@
                         <outlet property="checkInLabel" destination="F7W-yd-3Xt" id="iaa-cq-Vr9"/>
                         <outlet property="similarVenuesTableView" destination="DST-tc-IBZ" id="zNT-cm-vzY"/>
                         <outlet property="tipTextView" destination="tsL-0F-T6X" id="q0U-cV-9hP"/>
+                        <outlet property="venueImage" destination="6vc-U7-PYn" id="8kK-zJ-5VK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OzP-oQ-Xbn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -246,4 +282,9 @@
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Info_Icon" width="32" height="24"/>
+        <image name="Photos_Icon" width="32" height="32"/>
+        <image name="Radar_Icon" width="32" height="32"/>
+    </resources>
 </document>
